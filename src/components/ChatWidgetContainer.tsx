@@ -36,12 +36,16 @@ export type SharedProps = {
   customer?: CustomerMetadata | null;
   newMessagePlaceholder?: string;
   emailInputPlaceholder?: string;
+  nameInputPlaceholder?: string;
+  phoneInputPlaceholder?: string;
   newMessagesNotificationText?: string;
   agentAvailableText?: string;
   agentUnavailableText?: string;
   showAgentAvailability?: boolean;
   iframeUrlOverride?: string;
   requireEmailUpfront?: boolean;
+  requireNameUpfront?: boolean;
+  requirePhoneUpfront?: boolean;
   hideOutsideWorkingHours?: boolean;
   popUpInitialMessage?: boolean | number;
   customIconUrl?: string;
@@ -136,11 +140,15 @@ class ChatWidgetContainer extends React.Component<Props, State> {
       awayMessage,
       newMessagePlaceholder,
       emailInputPlaceholder,
+      nameInputPlaceholder,
+      phoneInputPlaceholder,
       newMessagesNotificationText,
       agentAvailableText,
       agentUnavailableText,
       showAgentAvailability,
       requireEmailUpfront,
+      requireNameUpfront,
+      requirePhoneUpfront,
       disableAnalyticsTracking,
       canToggle,
       customer = {},
@@ -173,11 +181,19 @@ class ChatWidgetContainer extends React.Component<Props, State> {
         newMessagePlaceholder || settings.new_message_placeholder,
       emailInputPlaceholder:
         emailInputPlaceholder || settings.email_input_placeholder,
+      nameInputPlaceholder:
+        nameInputPlaceholder || settings.name_input_placeholder,
+      phoneInputPlaceholder:
+        phoneInputPlaceholder || settings.phone_input_placeholder,
       newMessagesNotificationText:
         newMessagesNotificationText || settings.new_messages_notification_text,
       companyName: settings?.account?.company_name,
       requireEmailUpfront:
         requireEmailUpfront || settings.require_email_upfront ? 1 : 0,
+      requireNameUpfront:
+        requireNameUpfront || settings.require_name_upfront ? 1 : 0,
+      requirePhoneUpfront:
+        requirePhoneUpfront || settings.require_phone_upfront ? 1 : 0,
       showAgentAvailability:
         showAgentAvailability || settings.show_agent_availability ? 1 : 0,
       agentAvailableText: settings.agent_available_text || agentAvailableText,
@@ -228,8 +244,12 @@ class ChatWidgetContainer extends React.Component<Props, State> {
       greeting,
       newMessagePlaceholder,
       emailInputPlaceholder,
+      nameInputPlaceholder,
+      phoneInputPlaceholder,
       newMessagesNotificationText,
       requireEmailUpfront,
+      requireNameUpfront,
+      requirePhoneUpfront,
       showAgentAvailability,
       agentAvailableText,
       agentUnavailableText,
@@ -246,8 +266,12 @@ class ChatWidgetContainer extends React.Component<Props, State> {
       greeting,
       newMessagePlaceholder,
       emailInputPlaceholder,
+      nameInputPlaceholder,
+      phoneInputPlaceholder,
       newMessagesNotificationText,
       requireEmailUpfront,
+      requireNameUpfront,
+      requirePhoneUpfront,
       showAgentAvailability,
       agentAvailableText,
       agentUnavailableText,
@@ -263,8 +287,12 @@ class ChatWidgetContainer extends React.Component<Props, State> {
       prevProps.greeting,
       prevProps.newMessagePlaceholder,
       prevProps.emailInputPlaceholder,
+      prevProps.nameInputPlaceholder,
+      prevProps.phoneInputPlaceholder,
       prevProps.newMessagesNotificationText,
       prevProps.requireEmailUpfront,
+      prevProps.requireNameUpfront,
+      prevProps.requirePhoneUpfront,
       prevProps.showAgentAvailability,
       prevProps.agentAvailableText,
       prevProps.agentUnavailableText,
@@ -289,10 +317,14 @@ class ChatWidgetContainer extends React.Component<Props, State> {
         greeting,
         newMessagePlaceholder,
         emailInputPlaceholder,
+        nameInputPlaceholder,
+        phoneInputPlaceholder,
         newMessagesNotificationText,
         agentAvailableText,
         agentUnavailableText,
         requireEmailUpfront: requireEmailUpfront ? 1 : 0,
+        requireNameUpfront: requireNameUpfront ? 1 : 0,
+        requirePhoneUpfront: requirePhoneUpfront ? 1 : 0,
         showAgentAvailability: showAgentAvailability ? 1 : 0,
       });
     }

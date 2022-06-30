@@ -11,12 +11,16 @@ export type WidgetConfig = {
   awayMessage?: string;
   newMessagePlaceholder?: string;
   emailInputPlaceholder?: string;
+  nameInputPlaceholder?: string;
+  phoneInputPlaceholder?: string;
   newMessagesNotificationText?: string;
   companyName?: string;
   agentAvailableText?: string;
   agentUnavailableText?: string;
   showAgentAvailability?: 1 | 0;
   requireEmailUpfront?: 1 | 0;
+  requireNameUpfront?: 1 | 0;
+  requirePhoneUpfront?: 1 | 0;
   disableAnalyticsTracking?: 1 | 0;
   closeable?: 1 | 0;
   debug?: 1 | 0;

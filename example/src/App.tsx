@@ -4,8 +4,8 @@ import {ChatWidget, ChatWindow} from '@antbuddy-jsc/chat-widget';
 import {AntBuddy} from '@antbuddy-jsc/browser';
 
 // NB: during development, replace this with valid account/inbox IDs from your dev db
-const TEST_ACCOUNT_ID = '2ebbad4c-b162-4ed2-aff5-eaf9ebf469a5';
-const TEST_INBOX_ID = 'eab9c66e-ea8a-46f7-9565-3927ec55e20d';
+const TEST_ACCOUNT_ID = '3cb9b8f5-87c8-4050-82e0-c5c0fde67f65';
+const TEST_INBOX_ID = '7696015e-9591-48d2-86c7-ca40ab050377';
 
 const cups = AntBuddy.init({
   accountId: TEST_ACCOUNT_ID,
@@ -129,6 +129,8 @@ const App = ({disco, displayChatWindow}: Props) => {
           awayMessage="Sorry, we're not available at the moment! Leave your email and we'll get back to you as soon as we can :)"
           newMessagePlaceholder='Start typing...'
           emailInputPlaceholder='What is your email address?'
+          nameInputPlaceholder='What is your name?'
+          phoneInputPlaceholder='What is your phone number?'
           newMessagesNotificationText='View new messages'
           agentAvailableText='Agents are online!'
           agentUnavailableText='Agents are not available at the moment.'
